@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Manager{% endblock %}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        {% block stylesheets %}
+        <link href="{{ asset('/css/main.css') }}" type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ asset('/css/shadowbox.css') }}" type="text/css" media="screen" />
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{ path('homepage') }}" id="logo">Manager</a>
+                        <span id="slogan">to save your time and money...</span>
+                    </li>
+                    
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li>
+                        <a href="{{ path('fos_user_security_logout') }}">
+                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{{ path('fos_user_security_login') }}">
+                            {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Wallet</a></li>
+                    <li><a href="#">Calendar</a></li>
+                    <li class="active"><a href="#">Notes</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+        <footer>
+                Projekt Kapitol &copy; 2012
+        </footer>
+        {% block javascripts %}
+        <script src="{{ asset('js/jquery.min.js') }}" type="text/javascript"></script>
+        <script type="text/javascript" src="{{ asset('js/shadowbox.js') }}"></script>
+        <script type="text/javascript">
+                Shadowbox.init({
+                    skipSetup: true
+                });
+
+                $('.login_link').click (function() {
+                
+                    Shadowbox.open({
+                        content:    $('#sign_in_form_placeholder').html(),
+                        player:     "html",
+                        height:     240,
+                        width:      420
+                    });
+
+                });
+        </script>
+       {% endblock %}
+    </body>
+</html>
