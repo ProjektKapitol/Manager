@@ -12,7 +12,8 @@ body {
     min-height: 100%;
     width: 980px;
     margin: 0 auto;
-    padding: 30px;
+    padding: 20px;
+    padding-top: 10px;
     background: white;
     border: 1px solid #babdc1;
     border-top: none;
@@ -331,4 +332,8 @@ ul.days_view li .date {
 ul.days_view li .schedule {
     background-color: #eee;
     height: 400px;
+}
+#user_info {
+    text-align: right;
+    margin: 10px 0;
 }
