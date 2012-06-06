@@ -317,7 +317,7 @@ ul.days_view {
     width: 764px;
     float: left;
 }
-ul.days_view li {
+ul.days_view li.day {
     border: 1px solid #e8ecf0;
     padding: 15px;
     width: 207px;
@@ -347,19 +347,31 @@ ul.days_view li .scheduled li{
     list-style:none;
     margin: 0px;
     padding: 0px;
-    width: 205px;
+
     background-color: #C9184A;
     left: 0px;
     color: white;
     font-size: 12px;
+    height: 24px;
+    line-height: 24px;
 }
 
-ul.unasigned {
+.sidebar{
+    position: relative;
+    width: 200px;
+    min-height: 400px;
     float: left;
     list-style: none;
     margin: 0px;
     padding: 0px;
-    width: 200px;
+}
+ul.unasigned {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 ul.unasigned li{
@@ -370,6 +382,7 @@ ul.unasigned li{
     color: #141623;
     height: 24px;
     line-height: 24px;
+    text-align: center;
 }
 
 ul.folders_list li:last-child {
