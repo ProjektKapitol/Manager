@@ -329,9 +329,61 @@ ul.days_view li {
 ul.days_view li .date {
     margin-bottom: 15px;
 }
-ul.days_view li .schedule {
-    background-color: #eee;
-    height: 400px;
+
+ul.days_view li .grid {
+    position: relative;
+    border: 1px solid #eee;
+    border-bottom: none;
+}
+ul.days_view li .scheduled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+ul.days_view li .scheduled li{
+    list-style:none;
+    margin: 0px;
+    padding: 0px;
+    width: 205px;
+    background-color: #C9184A;
+    left: 0px;
+    color: white;
+    font-size: 12px;
+}
+
+ul.unasigned {
+    float: left;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: 200px;
+}
+
+ul.unasigned li{
+    display: block;
+    background-color: #e8ecf0;
+    margin-bottom: 1px;
+    text-decoration: none;
+    color: #141623;
+    height: 24px;
+    line-height: 24px;
+}
+
+ul.folders_list li:last-child {
+    margin-bottom: 0px;
+}
+
+
+ul.days_view li .grid .row {
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    height: 20px;
+    color: #bbb;
+    line-height: 20px;
+    font-size: 10px;
 }
 #user_info {
     text-align: right;
