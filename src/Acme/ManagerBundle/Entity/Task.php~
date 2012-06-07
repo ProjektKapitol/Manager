@@ -1,0 +1,64 @@
+<?php
+
+namespace Acme\ManagerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Acme\ManagerBundle\Entity\Task
+ *
+ * @ORM\Table(name="task")
+ * @ORM\Entity
+ */
+class Task
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    
+     /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="tasks")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
+    
+     /**
+     * @ORM\ManyToOne(targetEntity="TaskCategory", inversedBy="tasks")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    protected $category;
+    
+    /**
+     * @var smallint $is_done
+     *
+     * @ORM\Column(name="is_done", type="smallint")
+     */
+    private $is_done;
+
+    /**
+     * @var integer $duration
+     *
+     * @ORM\Column(name="duration", type="integer")
+     */
+    private $duration;
+
+    /**
+     * @var text $description
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+    /**
+     * @var datetime $timestampable
+     *
+     * @ORM\Column(name="timestampable", type="datetime")
+     */
+    private $timestampable;
+
+}

@@ -1,0 +1,27 @@
+<ul class="days_view">
+    {% for i in range(0, 2) %}
+    <li id="day_{{i}}" class="day">
+        <div class="date">April {{i}}, 2012</div>
+
+        <div>
+            <div class="grid">
+                {% for j in range(0, 23) %}
+                    <div class="row">{{j}}</div>
+                {% endfor %}
+                <ul class="tasks scheduled">
+                    <li>
+                        <div class="task-break"></div>
+                        <div class="task" style="height: 48px; line-height: 48px; top: 0px;">Work</li>
+                    </li>
+                    <li>
+                        <div class="task-break"></div>
+                        <div class="task" style="height: 48px; line-height: 48px; top: 0px;">Work</li>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </li>
+    {% endfor %}
+</ul>
