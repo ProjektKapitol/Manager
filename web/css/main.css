@@ -343,18 +343,30 @@ ul.days_view li .scheduled {
     height: 100%;
 }
 
-ul.days_view li .scheduled li{
+ul.days_view li .scheduled li {
     list-style:none;
+}
+
+ul.days_view li .scheduled li .task{
     margin: 0px;
     padding: 0px;
-
     background-color: #C9184A;
     left: 0px;
     color: white;
     font-size: 12px;
-    height: 24px;
     line-height: 24px;
 }
+
+ul.days_view li .scheduled li .task-break{
+    list-style:none;
+    margin: 0px;
+    padding: 0px;
+    left: 0px;
+    color: white;
+    font-size: 12px;
+    height: 6px;
+}
+
 
 .sidebar{
     position: relative;
@@ -366,7 +378,6 @@ ul.days_view li .scheduled li{
     padding: 0px;
 }
 ul.unasigned {
-
     position: absolute;
     top: 0;
     left: 0;
@@ -374,28 +385,35 @@ ul.unasigned {
     height: 100%;
 }
 
-ul.unasigned li{
-    display: block;
-    background-color: #e8ecf0;
+ul.unasigned li {
+    list-style: none;
+    border: 1px solid #e8ecf0;
+    background-color: white;
     margin-bottom: 1px;
+}
+ul.unasigned li .task{
     text-decoration: none;
     color: #141623;
     height: 24px;
     line-height: 24px;
     text-align: center;
+    background-color: #e8ecf0;
+}
+
+ul.unasigned li .task-break{
+    display:none;
 }
 
 ul.folders_list li:last-child {
     margin-bottom: 0px;
 }
 
-
 ul.days_view li .grid .row {
     box-sizing: border-box;
     border-bottom: 1px solid #eee;
-    height: 20px;
+    height: 24px;
     color: #bbb;
-    line-height: 20px;
+    line-height: 24px;
     font-size: 10px;
 }
 #user_info {
