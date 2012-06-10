@@ -97,7 +97,10 @@ h1, h2 {
     font-weight: normal;
 
 }
-h1 { font-size: 30pt; }
+h1 {
+    font-size: 30pt;
+    margin-bottom: 15px;
+}
 
 h2 { 
     font-size: 24pt;
@@ -270,7 +273,7 @@ form label {
     content: "*";
 }
 
-form input, form textarea {
+form input, form textarea, .input {
     background-color: #fbfcfd;
     font-family: Tahoma, Geneva, Arial, Helvetica, sans-serif;
     font-size: 10pt;
@@ -334,6 +337,12 @@ ul.days_view li .grid {
     position: relative;
     border: 1px solid #eee;
     border-bottom: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 ul.days_view li .scheduled {
     position: absolute;
@@ -355,6 +364,8 @@ ul.days_view li .scheduled li .task{
     color: white;
     font-size: 12px;
     line-height: 24px;
+    border-top: 1px solid #AA0833;
+    box-sizing: border-box;
 }
 
 ul.days_view li .scheduled li .task-break{
@@ -400,6 +411,28 @@ ul.unasigned li .task{
     background-color: #e8ecf0;
 }
 
+ul.unasigned li.add-task, ul.unasigned li.remove-task{
+    text-align: center;
+    padding: 10px;
+}
+ul.unasigned li.remove-task{
+    margin-top: 30px;
+    height: 48px;
+    line-height: 48px;
+    color: gray;
+}
+#add-task-description{
+    display: inline-block;
+    width: 130px;
+    margin: 0px;
+}
+#add-task-button{
+    display: inline-block;
+    width: 30px;
+    margin: 0px;
+    height: 27px;
+    line-height: 27px;
+}
 ul.unasigned li .task-break{
     display:none;
 }
@@ -419,4 +452,48 @@ ul.days_view li .grid .row {
 #user_info {
     text-align: right;
     margin: 10px 0;
+}
+
+.sign_in{
+    border: 1px solid #EDF0F3;
+    float: right;
+    padding: 20px;
+    -webkit-box-shadow: 0 2x 4px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+ul.modes{
+    list-style: none;
+    float: right;
+}
+ul.modes li{
+    float: left;
+}
+ul.modes a{
+    opacity: 0.8;
+    border: 1px solid #e8ecf0;
+    display: block;
+    margin: 0px;
+    padding: 0px 10px;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: none;
+    color: #141623;
+    text-align: center;
+    background-color: #e8ecf0;
+    margin-left: 1px;
+    padding-left: 45px;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+ul.modes a#mode-days{
+    background-image: url(../images/list.png);
+
+}
+ul.modes a#mode-month{
+    background-image: url(../images/month.png);
+}
+ul.modes a.active {
+    background-color: transparent;
 }

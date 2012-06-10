@@ -1,6 +1,14 @@
 homepage:
     pattern:  /
+    defaults: { _controller: AcmeManagerBundle:Default:index }
+    
+calendar:
+    pattern:  /calendar
     defaults: { _controller: AcmeManagerBundle:Calendar:index }
+    
+wallet:
+    pattern:  /wallet
+    defaults: { _controller: AcmeManagerBundle:Wallet:index }
     
 jsonDataDays:
     pattern:  /data/days/{year}/{month}/{day}.json

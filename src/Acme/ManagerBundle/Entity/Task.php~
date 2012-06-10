@@ -191,4 +191,10 @@ class Task
     {
         return $this->category;
     }
+    
+    public function getStartTime()
+    {
+        $d =  $this->getStart();
+        return array('y' => $d->format("Y"), 'm' => $d->format("m"), 'd' => $d->format("d"), 'h' => $d->format("H"), 'i' => $d->format("i"));
+    }
 }

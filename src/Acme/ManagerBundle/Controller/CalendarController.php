@@ -37,7 +37,7 @@ class CalendarController extends Controller
             $key = $date->format('Y-m-d');
             $days[$key] = array();
             $date->add(new \DateInterval('P1D'));
-            $days[$key]['tasks'] = isset($day_tasks[$key]) ? $day_tasks[$key] : array() ;
+            $days[$key]['tasks'] = isset($day_tasks[$key]) ? $day_tasks[$key] : array();
         }
         
         return new Response(json_encode(array(
