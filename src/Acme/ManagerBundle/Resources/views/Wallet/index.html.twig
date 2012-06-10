@@ -1,0 +1,18 @@
+{% extends "AcmeManagerBundle::layout.html.twig" %}
+
+{% block menu %}
+    {% set active = 'wallet' %}
+    {{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+
+</script>
+{% endblock %}
+
+{% block content %}
+<h1>Wallet</h1>
+
+
+{% endblock %}

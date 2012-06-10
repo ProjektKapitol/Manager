@@ -1,0 +1,13 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block menu %}
+    {% set active = 'settings' %}
+    {{ parent() }}
+{% endblock %}
+
+{% block fos_user_content %}
+    
+<h1>Settings</h1>
+
+{% include "FOSUserBundle:Profile:edit_content.html.twig" %}
+{% endblock fos_user_content %}
