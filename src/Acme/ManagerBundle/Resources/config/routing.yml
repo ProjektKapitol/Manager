@@ -2,8 +2,21 @@ homepage:
     pattern:  /
     defaults: { _controller: AcmeManagerBundle:Calendar:index }
     
-jsonData:
-    pattern:  /jsonData.json
-    defaults: { _controller: AcmeManagerBundle:Calendar:jsonData }   
+jsonDataDays:
+    pattern:  /data/days/{year}/{month}/{day}.json
+    defaults: { _controller: AcmeManagerBundle:Calendar:daysData }
+    requirements:
+        day:  \d+
+        month:  \d+
+        year:  \d+
+    options:
+        expose: true
+        
+jsonDataMonth:
+    pattern:  /data/month/{month}-{year}.json
+    defaults: { _controller: AcmeManagerBundle:Calendar:monthData }
+    requirements:
+        month:  \d+
+        year:  \d+
     options:
         expose: true

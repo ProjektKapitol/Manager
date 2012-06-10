@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Acme\ManagerBundle\Entity\Task
  *
  * @ORM\Table(name="task")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Acme\ManagerBundle\Repository\TaskRepository")
  */
 class Task
 {
@@ -39,7 +39,14 @@ class Task
      * @ORM\Column(name="is_done", type="smallint")
      */
     private $is_done;
-
+    
+    /**
+     * @var integer $duration
+     *
+     * @ORM\Column(name="start", type="datetime")
+     */
+    private $start;
+    
     /**
      * @var integer $duration
      *
@@ -53,13 +60,6 @@ class Task
      * @ORM\Column(name="description", type="text")
      */
     private $description;
-
-    /**
-     * @var datetime $timestampable
-     *
-     * @ORM\Column(name="timestampable", type="datetime")
-     */
-    private $timestampable;
 
 
     /**
@@ -90,6 +90,26 @@ class Task
     public function getIsDone()
     {
         return $this->is_done;
+    }
+
+    /**
+     * Set start
+     *
+     * @param date $start
+     */
+    public function setStart($start)
+    {
+        $this->start = $start;
+    }
+
+    /**
+     * Get start
+     *
+     * @return date 
+     */
+    public function getStart()
+    {
+        return $this->start;
     }
 
     /**
@@ -133,26 +153,6 @@ class Task
     }
 
     /**
-     * Set timestampable
-     *
-     * @param datetime $timestampable
-     */
-    public function setTimestampable($timestampable)
-    {
-        $this->timestampable = $timestampable;
-    }
-
-    /**
-     * Get timestampable
-     *
-     * @return datetime 
-     */
-    public function getTimestampable()
-    {
-        return $this->timestampable;
-    }
-
-    /**
      * Set user
      *
      * @param Acme\ManagerBundle\Entity\User $user
@@ -190,5 +190,11 @@ class Task
     public function getCategory()
     {
         return $this->category;
+    }
+    
+    public function getStartTime()
+    {
+        $d =  $this->getStart();
+        return array('h' => $d->format("h"), 'i' => $d->format("i"));
     }
 }

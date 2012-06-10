@@ -3,30 +3,18 @@
 {% block javascripts %}
 {{ parent() }}
 <script src="{{ asset('js/calendar.js') }}" type="text/javascript"></script>
-
+<script src="{{ asset('js/data.js') }}" type="text/javascript"></script>
 <script type="text/javascript">
     $(function() {
-        Manager.Calendar.start({
-            container: '#days',
-            route: 'jsonData'
+        Manager.Data.jsonLoad('jsonDataDays', {'year': 2012, 'month': 6, 'day': 9});
+        $('body').bind('Manager.Data:jsonloaded', function(event, data) {
+            //data recived
+            Manager.Calendar.start({
+                container: '#days',
+                data: data
+            });
+            
         });
-        $( ".unasigned, .scheduled" ).sortable({
-            connectWith: ".tasks",
-            placeholder: "task-placeholder",
-            cancel: ".break",
-            forcePlaceholderSize: true
-	}).disableSelection();
-
-    
-        $( ".unasigned, .scheduled" ).bind( "sortstop", function(event, ui) {
-            $(ui.item[0]).children().width("100%");
-        });
-        
-        $( ".tasks li > *" ).resizable({
-            grid: 2,
-            handles: 's',
-            minHeight: 0
-	});
         
     });
 
