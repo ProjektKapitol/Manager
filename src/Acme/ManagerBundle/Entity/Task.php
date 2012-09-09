@@ -43,7 +43,7 @@ class Task
     /**
      * @var integer $duration
      *
-     * @ORM\Column(name="start", type="datetime")
+     * @ORM\Column(name="start", type="datetime", nullable="true")
      */
     private $start;
     

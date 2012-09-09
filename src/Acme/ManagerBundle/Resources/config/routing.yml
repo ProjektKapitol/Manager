@@ -10,21 +10,8 @@ wallet:
     pattern:  /wallet
     defaults: { _controller: AcmeManagerBundle:Wallet:index }
     
-jsonDataDays:
-    pattern:  /data/days/{year}/{month}/{day}.json
-    defaults: { _controller: AcmeManagerBundle:Calendar:daysData }
-    requirements:
-        day:  \d+
-        month:  \d+
-        year:  \d+
-    options:
-        expose: true
-        
-jsonDataMonth:
-    pattern:  /data/month/{month}-{year}.json
-    defaults: { _controller: AcmeManagerBundle:Calendar:monthData }
-    requirements:
-        month:  \d+
-        year:  \d+
+calendar_data:
+    pattern:  /calendar/data/{from}/{to}.json
+    defaults: { _controller: AcmeManagerBundle:Calendar:data }
     options:
         expose: true

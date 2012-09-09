@@ -15,10 +15,15 @@ class CalendarController extends Controller
         return $this->render('AcmeManagerBundle:Calendar:index.html.twig');
     }
     
-    public function daysDataAction($year, $month, $day)
+    public function dataAction($from, $to)
     {
-        $tasks = $this->getDoctrine()->getRepository('AcmeManagerBundle:Task')->findAll();
-        
+        $date_from =  new \DateTime($from . ' 00:00:00');
+        $date_to =  new \DateTime($to . ' 23:59:59');
+
+        //fetch tasks from database
+        $tasks = $this->getDoctrine()->getRepository('AcmeManagerBundle:Task')->findBetween($date_from, $date_to);
+
+        //pigeonholing into days
         foreach($tasks as $task) {
             $key = $task->getStart()->format("Y-m-d");
             
@@ -28,22 +33,29 @@ class CalendarController extends Controller
                 'duration' => $task->getDuration(),
             );
         }
-        
-        $days = array();
-        
-        $date = new \DateTime($year . '-' . $month . '-' . $day);
-        
-        for($i = 0; $i < $this->numOfDays; $i++) {
-            $key = $date->format('Y-m-d');
-            $days[$key] = array();
-            $date->add(new \DateInterval('P1D'));
-            $days[$key]['tasks'] = isset($day_tasks[$key]) ? $day_tasks[$key] : array();
+
+        $unscheduled = $this->getDoctrine()->getRepository('AcmeManagerBundle:Task')->findUnscheduled();
+        foreach($unscheduled as $task) {
+            $unscheduled_tasks[] = array(
+                'description' => $task->getDescription(),
+                'duration' => $task->getDuration(),
+            );
+        }
+
+        $days = array("unscheduled" => $unscheduled_tasks);
+
+        //building days list depending on given dates range
+        $diff = (int)$date_to->diff($date_from)->format('%a');
+        $tmp = $date_from;
+
+        for($i = 0; $i <= $diff; $i++) {
+            $key = $tmp->format('Y-m-d');
+            $days['scheduled'][$key] = array();
+            $days['scheduled'][$key]['tasks'] = isset($day_tasks[$key]) ? $day_tasks[$key] : array();
+            $tmp->add(new \DateInterval('P1D'));
         }
         
-        return new Response(json_encode(array(
-            "view" => "days",
-            "data" => $days,
-        )));
+        return new Response(json_encode($days));
     }
 
 }
