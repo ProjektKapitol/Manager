@@ -14,4 +14,9 @@ class WalletController extends Controller
         return $this->render('AcmeManagerBundle:Wallet:index.html.twig');
     }
 
+    public function dataAction()
+    {
+        return new Response(json_encode(""));
+    }
+
 }

@@ -58,4 +58,8 @@ class CalendarController extends Controller
         return new Response(json_encode($days));
     }
 
+    public function saveAction($data) {
+        //save data here
+    }
+
 }
