@@ -217,7 +217,6 @@ Manager.Calendar = {
 
                 //iterate over days
                 $.each(data.scheduled, function (key, day) {
-
                     if(!obj.draft.scheduled[key]) {
                         obj.draft.scheduled[key] = day;
                     }
@@ -229,7 +228,7 @@ Manager.Calendar = {
                     $("#day_" + i + " .tasks").html("");
 
                     //iterate over tasks
-                    $.each(obj.draft.scheduled[key].tasks, function (k, task) {
+                    $.each(data.scheduled[key].tasks, function (k, task) {
 
                         var el = obj.createTask({ 'description':task.description });
 

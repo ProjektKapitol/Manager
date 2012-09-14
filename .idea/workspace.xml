@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce5c170-a333-4e8e-b7e4-c54ee9321997" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Calendar/index.html.twig" afterPath="$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Calendar/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/main.css" afterPath="$PROJECT_DIR$/web/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/calendar.js" afterPath="$PROJECT_DIR$/web/js/calendar.js" />
     </list>
     <ignored path="manager.iws" />
@@ -57,7 +54,7 @@
       <file leaf-file-name="calendar.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/calendar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="50" selection-start="4765" selection-end="4765" vertical-scroll-proportion="0.793456">
+            <state line="230" column="45" selection-start="7841" selection-end="7841" vertical-scroll-proportion="0.47124305">
               <folding />
             </state>
           </provider>
@@ -515,7 +512,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/calendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="50" selection-start="4765" selection-end="4765" vertical-scroll-proportion="0.793456">
+        <state line="230" column="45" selection-start="7841" selection-end="7841" vertical-scroll-proportion="0.47124305">
           <folding />
         </state>
       </provider>
