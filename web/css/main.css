@@ -398,6 +398,7 @@ ul.unassigned li .task{
     text-align: center;
     background-color: #e8ecf0;
     height: 36px;
+    line-height: 36px;
 }
 
 .add-task, .remove-task{

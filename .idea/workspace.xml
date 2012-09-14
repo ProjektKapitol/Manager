@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce5c170-a333-4e8e-b7e4-c54ee9321997" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Wallet/days.html.twig" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Acme/ManagerBundle/Controller/CalendarController.php" afterPath="$PROJECT_DIR$/src/Acme/ManagerBundle/Controller/CalendarController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Acme/ManagerBundle/Entity/Task.php" afterPath="$PROJECT_DIR$/src/Acme/ManagerBundle/Entity/Task.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Acme/ManagerBundle/Repository/TaskRepository.php" afterPath="$PROJECT_DIR$/src/Acme/ManagerBundle/Repository/TaskRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Calendar/index.html.twig" afterPath="$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Calendar/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Wallet/index.html.twig" afterPath="$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Wallet/index.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/main.css" afterPath="$PROJECT_DIR$/web/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/calendar.js" afterPath="$PROJECT_DIR$/web/js/calendar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/jquery-ui-1.8.21.custom.min.js" afterPath="$PROJECT_DIR$/web/js/jquery-ui-1.8.21.custom.min.js" />
     </list>
     <ignored path="manager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,19 +36,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CalendarController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Controller/CalendarController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="39" selection-start="87" selection-end="87" vertical-scroll-proportion="-0.625">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Calendar/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="31" selection-start="756" selection-end="756" vertical-scroll-proportion="-6.875">
+            <state line="32" column="0" selection-start="991" selection-end="991" vertical-scroll-proportion="-6.4583335">
               <folding />
             </state>
           </provider>
@@ -63,7 +48,7 @@
       <file leaf-file-name="days.html.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Calendar/days.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="341" selection-end="341" vertical-scroll-proportion="-6.875">
+            <state line="2" column="35" selection-start="89" selection-end="89" vertical-scroll-proportion="-1.25">
               <folding />
             </state>
           </provider>
@@ -72,16 +57,7 @@
       <file leaf-file-name="calendar.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/js/calendar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="212" column="32" selection-start="6922" selection-end="6922" vertical-scroll-proportion="6.583851">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/data.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
+            <state line="146" column="50" selection-start="4765" selection-end="4765" vertical-scroll-proportion="0.793456">
               <folding />
             </state>
           </provider>
@@ -90,16 +66,34 @@
       <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="494" column="27" selection-start="9579" selection-end="9579" vertical-scroll-proportion="0.0">
+            <state line="116" column="14" selection-start="2049" selection-end="2052" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Task.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Entity/Task.php">
+      <file leaf-file-name="jquery-ui-1.8.21.custom.min.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/jquery-ui-1.8.21.custom.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="5" selection-start="1442" selection-end="1442" vertical-scroll-proportion="-0.625">
+            <state line="20" column="5761" selection-start="34957" selection-end="34957" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.min.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/jquery.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="23" selection-start="65258" selection-end="65258" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/data.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="2" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -108,7 +102,7 @@
       <file leaf-file-name="TaskRepository.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Repository/TaskRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="1" selection-start="259" selection-end="259" vertical-scroll-proportion="-5.5">
+            <state line="13" column="1" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -117,7 +111,7 @@
       <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Entity/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="34" selection-start="854" selection-end="854" vertical-scroll-proportion="-10.5">
+            <state line="49" column="34" selection-start="854" selection-end="854" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -140,8 +134,9 @@
         <option value="$PROJECT_DIR$/src/Acme/ManagerBundle/Entity/Task.php" />
         <option value="$PROJECT_DIR$/src/Acme/ManagerBundle/Repository/TaskRepository.php" />
         <option value="$PROJECT_DIR$/src/Acme/ManagerBundle/Controller/CalendarController.php" />
-        <option value="$PROJECT_DIR$/web/css/main.css" />
         <option value="$PROJECT_DIR$/web/js/data.js" />
+        <option value="$PROJECT_DIR$/web/js/jquery-ui-1.8.21.custom.min.js" />
+        <option value="$PROJECT_DIR$/web/css/main.css" />
         <option value="$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Calendar/index.html.twig" />
         <option value="$PROJECT_DIR$/web/js/calendar.js" />
       </list>
@@ -298,7 +293,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -309,173 +304,12 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Acme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ManagerBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Acme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ManagerBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Acme" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="options.lastSelected" value="preferences.editor" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
@@ -540,7 +374,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26336792" sideWeight="0.95498395" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26336792" sideWeight="0.95498395" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -620,9 +454,14 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/main.css">
+    <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Entity/Task.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="494" column="27" selection-start="9579" selection-end="9579" vertical-scroll-proportion="0.0" />
+        <state line="72" column="5" selection-start="1442" selection-end="1442" vertical-scroll-proportion="-0.625" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Controller/CalendarController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="39" selection-start="87" selection-end="87" vertical-scroll-proportion="-0.625" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
@@ -630,58 +469,53 @@
         <state line="24" column="0" selection-start="649" selection-end="649" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/jquery-ui-1.8.21.custom.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="5761" selection-start="34957" selection-end="34957" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="23" selection-start="65258" selection-end="65258" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Controller/CalendarController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="39" selection-start="87" selection-end="87" vertical-scroll-proportion="-0.625">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Entity/Task.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="5" selection-start="1442" selection-end="1442" vertical-scroll-proportion="-0.625">
-          <folding />
-        </state>
+        <state line="9" column="2" selection-start="306" selection-end="306" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Repository/TaskRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="1" selection-start="259" selection-end="259" vertical-scroll-proportion="-5.5">
-          <folding />
-        </state>
+        <state line="13" column="1" selection-start="259" selection-end="259" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="34" selection-start="854" selection-end="854" vertical-scroll-proportion="-10.5">
-          <folding />
-        </state>
+        <state line="49" column="34" selection-start="854" selection-end="854" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Calendar/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="31" selection-start="756" selection-end="756" vertical-scroll-proportion="-6.875">
+        <state line="32" column="0" selection-start="991" selection-end="991" vertical-scroll-proportion="-6.4583335">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="14" selection-start="2049" selection-end="2052" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Calendar/days.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="341" selection-end="341" vertical-scroll-proportion="-6.875">
+        <state line="2" column="35" selection-start="89" selection-end="89" vertical-scroll-proportion="-1.25">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/calendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="212" column="32" selection-start="6922" selection-end="6922" vertical-scroll-proportion="6.583851">
+        <state line="146" column="50" selection-start="4765" selection-end="4765" vertical-scroll-proportion="0.793456">
           <folding />
         </state>
       </provider>
