@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce5c170-a333-4e8e-b7e4-c54ee9321997" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/wallet.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Wallet/index.html.twig" afterPath="$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Wallet/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Wallet/transactions.html.twig" afterPath="$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Wallet/transactions.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/calendar.js" afterPath="$PROJECT_DIR$/web/js/calendar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
     </list>
     <ignored path="manager.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,10 +33,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Wallet/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="28" selection-start="670" selection-end="670" vertical-scroll-proportion="0.7403315">
+            <state line="20" column="21" selection-start="350" selection-end="350" vertical-scroll-proportion="-10.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="33" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1347982311000" expanded="true" signature="1336:1441" placeholder="swiftmailer:" />
+                <marker date="1347982311000" expanded="true" signature="1474:1525" placeholder="jms_security_extra:" />
+                <marker date="1347982311000" expanded="true" signature="1525:1613" placeholder="fos_user:" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppKernel.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="18" selection-start="605" selection-end="605" vertical-scroll-proportion="0.44198895">
               <folding />
             </state>
           </provider>
@@ -68,7 +86,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/Acme/ManagerBundle/Repository/TaskRepository.php" />
         <option value="$PROJECT_DIR$/web/js/data.js" />
         <option value="$PROJECT_DIR$/web/js/jquery-ui-1.8.21.custom.min.js" />
         <option value="$PROJECT_DIR$/src/Acme/ManagerBundle/Controller/CalendarController.php" />
@@ -84,6 +101,7 @@
         <option value="$PROJECT_DIR$/web/js/wallet.js" />
         <option value="$PROJECT_DIR$/web/js/calendar.js" />
         <option value="$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Wallet/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
       </list>
     </option>
   </component>
@@ -768,16 +786,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/shadowbox.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="27" selection-start="1103" selection-end="1103" vertical-scroll-proportion="0.38391224" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="525" selection-end="525" vertical-scroll-proportion="0.4945055" />
@@ -869,7 +877,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Acme/ManagerBundle/Resources/views/Wallet/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="28" selection-start="670" selection-end="670" vertical-scroll-proportion="0.7403315">
+        <state line="20" column="21" selection-start="350" selection-end="350" vertical-scroll-proportion="-10.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="33" selection-start="1054" selection-end="1054" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1347982311000" expanded="true" signature="1336:1441" placeholder="swiftmailer:" />
+            <marker date="1347982311000" expanded="true" signature="1474:1525" placeholder="jms_security_extra:" />
+            <marker date="1347982311000" expanded="true" signature="1525:1613" placeholder="fos_user:" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="18" selection-start="605" selection-end="605" vertical-scroll-proportion="0.44198895">
           <folding />
         </state>
       </provider>
