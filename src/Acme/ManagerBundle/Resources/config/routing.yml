@@ -15,3 +15,15 @@ calendar_data:
     defaults: { _controller: AcmeManagerBundle:Calendar:data }
     options:
         expose: true
+
+transaction_categories_data:
+    pattern:  /wallet/categories.json
+    defaults: { _controller: AcmeManagerBundle:Wallet:categoriesData }
+    options:
+        expose: true
+
+transactions_data:
+    pattern:  /wallet/transactions/{categoryId}.json
+    defaults: { _controller: AcmeManagerBundle:Wallet:transactionsData }
+    options:
+        expose: true

@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Transaction
 {
+    public static $types = array(0 => 'outcome', 1 => 'income');
+
     /**
      * @var integer $id
      *
@@ -20,13 +22,6 @@ class Transaction
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-    /**
-     * @var integer $amount
-     *
-     * @ORM\Column(name="amount", type="integer")
-     */
-    private $amount;
 
     /**
      * @var smallint $type
@@ -47,6 +42,13 @@ class Transaction
      * @ORM\Column(name="description", type="text")
      */
     private $description;
+
+    /**
+     * @var integer $value
+     *
+     * @ORM\Column(name="value", type="integer")
+     */
+    private $value;
 
     /**
      * @var datetime $timestampable
@@ -191,5 +193,25 @@ class Transaction
     public function getBalance()
     {
         return $this->balance;
+    }
+
+    /**
+     * Set value
+     *
+     * @param integer $value
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+    }
+
+    /**
+     * Get value
+     *
+     * @return integer 
+     */
+    public function getValue()
+    {
+        return $this->value;
     }
 }

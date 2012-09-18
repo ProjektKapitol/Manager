@@ -371,6 +371,38 @@ ul.days_view li .scheduled li .task{
     box-sizing: border-box;
 }
 
+ul.transactions {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul.transactions li  {
+    margin: 0px;
+    padding: 10px 20px;
+    background-color:  #E8ECF0;
+    left: 0px;
+    font-size: 12px;
+    line-height: 24px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+
+ul.transactions li  .value, ul.transactions li  .balance  {
+    width: 100px;
+    float: right;
+    text-align: center;
+}
+ul.transactions li.outcome .value {
+    color: white;
+    background-color: #C9184A;
+}
+
+ul.transactions li.income  .value  {
+    color: white;
+    background-color: #2F3453;
+}
 .sidebar{
     width: 200px;
     min-height: 400px;
@@ -385,7 +417,7 @@ ul.unassigned {
     min-height: 50px;
 }
 
-ul.unassigned li, .add-task, .remove-task{
+ul.unassigned li, .add-task, .remove-task, .add-category, .remove-category, .add-transaction, .remove-transaction {
     list-style: none;
     border: 1px solid #e8ecf0;
     background-color: white;
@@ -401,22 +433,30 @@ ul.unassigned li .task{
     line-height: 36px;
 }
 
-.add-task, .remove-task{
+.add-task, .remove-task, .add-category, .remove-category, .add-transaction, .remove-transaction {
     text-align: center;
     padding: 10px;
 }
-.remove-task{
+.remove-task, .remove-category, .remove-transaction{
     margin-top: 30px;
     height: 48px;
     line-height: 48px;
     color: gray;
+    font-size: 12px;
 }
-#add-task-description{
+#add-task-description, #add-category-name, #add-transaction-description, #add-transaction-value {
     display: inline-block;
     width: 130px;
     margin: 0px;
 }
-#add-task-button{
+#add-transaction-description {
+    width: 560px;
+}
+#add-transaction-value {
+    width: 100px;
+}
+
+#add-task-button, #add-category-button, #add-transaction-button {
     display: inline-block;
     width: 30px;
     margin: 0px;
@@ -445,7 +485,7 @@ ul.days_view li .grid .row {
     border: 1px solid #EDF0F3;
     float: right;
     padding: 20px;
-    -webkit-box-shadow: 0 2x 4px rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.2);
     -moz-box-shadow: 0 2px 4px rgba(0,0,0,.2);
     box-shadow: 0 2px 4px rgba(0,0,0,.2);
 }
@@ -488,6 +528,12 @@ ul.modes a.active {
     width: 200px;
     float: left;
 }
+
+#wallet-header{
+    width: 200px;
+    float: left;
+}
+
 #calendar-save{
     margin-left: 30px;
     float: left;
@@ -497,7 +543,25 @@ ul.modes a.active {
     float: right;
 }
 .button.next{
-
     margin-left: 1px;
+}
 
+#transactions-list {
+    float: left;
+    margin-left: 30px;
+    width: 750px;
+}
+
+/* Login */
+
+#remember_me {
+    float: left;
+    width: auto;
+    margin-bottom: 0px;
+    margin-right: 5px;
+    padding: 0px;
+}
+
+#_submit {
+    margin-top: 10px;
 }

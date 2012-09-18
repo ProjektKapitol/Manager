@@ -22,13 +22,6 @@ class Transaction
     private $id;
 
     /**
-     * @var integer $amount
-     *
-     * @ORM\Column(name="amount", type="integer")
-     */
-    private $amount;
-
-    /**
      * @var smallint $type
      *
      * @ORM\Column(name="type", type="smallint")
@@ -47,6 +40,13 @@ class Transaction
      * @ORM\Column(name="description", type="text")
      */
     private $description;
+
+    /**
+     * @var integer $value
+     *
+     * @ORM\Column(name="value", type="integer")
+     */
+    private $value;
 
     /**
      * @var datetime $timestampable
