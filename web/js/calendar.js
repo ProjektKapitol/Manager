@@ -55,7 +55,7 @@ Manager.Calendar = {
             //current state of data - kept up to date for easy save
             draft: {
                 scheduled: [],
-                unscheduled: []
+                unscheduled: undefined
             },
 
             start: function() {
@@ -106,14 +106,17 @@ Manager.Calendar = {
                             el.css('top', pos + "px");
 
                             var dataCopy = ui.draggable.data('raw');
-                            el.data("raw", dataCopy);
 
+                            el.data('raw', dataCopy);
                             ui.draggable.remove();
+
                         } else {
                             var el = ui.draggable;
+                            var pos = ui.draggable.position().top;
                         }
 
                         var taskData = el.data('raw');
+
                         var dayKey = $(event.target).data('key');
                         var date =  obj.splitDate(dayKey);
 
@@ -122,6 +125,7 @@ Manager.Calendar = {
                         dateFull.i = Math.round(pos%24*2.5);
 
                         taskData.startTime = dateFull;
+                        console.log(dateFull);
 
                         taskData.duration = obj.calculateDuration(height);
 
@@ -156,7 +160,7 @@ Manager.Calendar = {
                     $(dayEl).children().each(function(k, taskEl) {
                         tasksData.push ($(taskEl).data("raw"));
                     });
-                    obj.draft.scheduled[dayKey] = tasksData;
+                    obj.draft.scheduled[dayKey].tasks = tasksData;
                 });
             },
 
@@ -170,7 +174,6 @@ Manager.Calendar = {
 
             createTask:function (d) {
                 var el = $('<li><div class="task">' + d.description + '</div></li>');
-
                 el.data('raw', d);
                 this.makeResizable($(el).children(this.taskInner));
                 return el;
@@ -182,6 +185,7 @@ Manager.Calendar = {
                 //save the changes to draft
                 this.refreshDraft();
 
+                this.refreshUnscheduled();
                 this.range.from = this.calendar.plusDays(this.range.from, n);
                 this.range.to = this.calendar.plusDays(this.range.to, n);
 
@@ -227,10 +231,10 @@ Manager.Calendar = {
                     var list = [];
                     $("#day_" + i + " .tasks").html("");
 
-                    //iterate over tasks
-                    $.each(data.scheduled[key].tasks, function (k, task) {
 
-                        var el = obj.createTask({ 'description':task.description });
+                    //iterate over tasks
+                    $.each(obj.draft.scheduled[key].tasks, function (k, task) {
+                        var el = obj.createTask(task);
 
                         $("#day_" + i + " .tasks").append(el);
 
@@ -249,11 +253,11 @@ Manager.Calendar = {
 
                 var list = [];
 
-
-                //when unassigned tasks exist they should remain not changed
-                if ($(this.unassigned).children().length == 0) {
+                    if(obj.draft.unscheduled == undefined) {
+                        obj.draft.unscheduled = data.unscheduled;
+                    }
                     //iterate over unscheduled tasks
-                    $.each(data.unscheduled, function (k, task) {
+                    $.each(obj.draft.unscheduled, function (k, task) {
 
                         var el = obj.createTask(task);
 
@@ -277,7 +281,6 @@ Manager.Calendar = {
                             ui.item.children().css('width', '100%');
                             ui.item.css('position', '');
                         }).disableSelection();
-                }
 
                 this.makeDraggable($(this.scheduled).children(this.tasks));
 
