@@ -18,7 +18,8 @@
         var to = Manager.Calendar.plusDays(today, 1);
 
         var range = {'from': Manager.Calendar.formatDate(from), 'to': Manager.Calendar.formatDate(to)};
-        Manager.Data.jsonLoad('calendar_data', range);
+        Manager.Data.jsonLoad('Calendar', 'calendar_data', range);
+
 
         Manager.Calendar.start({
             container: '#days',
@@ -26,7 +27,7 @@
             range: {'from': from, 'to': to}
         });
 
-        $('body').bind('Manager.Data:jsonloaded', function(event, data) {
+        $('body').bind('Manager.Calendar:jsonLoaded', function(event, data) {
             Manager.Calendar.view.update(data);
         });
         

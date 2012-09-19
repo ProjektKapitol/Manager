@@ -7,7 +7,24 @@
 
 {% block javascripts %}
 {{ parent() }}
+<script src="{{ asset('js/wallet.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/data.js') }}" type="text/javascript"></script>
 
+<script type="text/javascript">
+    $(function() {
+
+        Manager.Wallet.start({
+            container: '#wallet',
+            view: 'default'
+        });
+
+        $('body').bind('Manager.Wallet:jsonLoaded', function(event, data) {
+            Manager.Wallet.view.update(data);
+        });
+
+    });
+
+</script>
 {% endblock %}
 
 {% block content %}

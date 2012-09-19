@@ -39,7 +39,7 @@ Manager.Calendar = {
             range:{},
             calendar:null,
             //TODO get rid of hardcoded values
-            ratio: 576 / 60 / 24,
+            ratio:576 / 60 / 24,
             unassigned:".unassigned",
             scheduled:".scheduled",
             remover:".remove-task",
@@ -47,18 +47,18 @@ Manager.Calendar = {
             taskInner:".task",
             tasks:".tasks li",
 
-            saveButton: "#calendar-save",
+            saveButton:"#calendar-save",
 
             addInput:"#add-task-description",
             addButton:"#add-task-button",
 
             //current state of data - kept up to date for easy save
-            draft: {
-                scheduled: [],
-                unscheduled: undefined
+            draft:{
+                scheduled:[],
+                unscheduled:undefined
             },
 
-            start: function() {
+            start:function () {
                 var obj = this;
                 //new task
                 $(this.addInput).focus(function () {
@@ -76,11 +76,13 @@ Manager.Calendar = {
 
                 $(this.saveButton).click(function () {
                     obj.refreshDraft();
-
-                    // unscheduled tasks should be added to draft only on save
                     obj.refreshUnscheduled();
 
                     console.log(obj.draft);
+
+                    //TODO refactor
+                    Manager.Data.jsonLoad('Calendar', 'calendar_data_save', obj.draft);
+
                     return false
                 });
 
@@ -88,15 +90,14 @@ Manager.Calendar = {
                     accept:this.tasks,
 
                     drop:function (event, ui) {
-
                         if (ui.draggable.parent(obj.unassigned).length > 0) {
                             // clone task element
-                            var el = obj.createTask({ 'description':ui.draggable.html});
+                            var el = obj.createTask(ui.draggable.data("raw"));
                             obj.makeDraggable(el);
 
                             var height = ui.draggable.css('height');
                             el.children(obj.taskInner).css('height', height);
-                            el.children(obj.taskInner).html(ui.draggable.html());
+                            el.children(obj.taskInner).css('line-height', height);
                             obj.makeResizable(el.children(obj.taskInner));
 
                             var offset = ui.draggable.parent().offset().top - (ui.draggable.parent().offset().top - $(this).offset().top );
@@ -113,19 +114,19 @@ Manager.Calendar = {
                         } else {
                             var el = ui.draggable;
                             var pos = ui.draggable.position().top;
+                            var height = ui.draggable.css('height');
                         }
 
                         var taskData = el.data('raw');
 
                         var dayKey = $(event.target).data('key');
-                        var date =  obj.splitDate(dayKey);
+                        var date = obj.splitDate(dayKey);
 
                         var dateFull = date;
-                        dateFull.h =  Math.floor(pos/24);
-                        dateFull.i = Math.round(pos%24*2.5);
+                        dateFull.h = Math.floor(pos / 24);
+                        dateFull.i = Math.round(pos % 24 * 2.5);
 
                         taskData.startTime = dateFull;
-                        console.log(dateFull);
 
                         taskData.duration = obj.calculateDuration(height);
 
@@ -147,18 +148,18 @@ Manager.Calendar = {
                 });
             },
 
-            calculateDuration: function(height) {
+            calculateDuration:function (height) {
                 //TODO get rid of hardcoded values
                 return Math.round(parseInt(height) * 2.5);
             },
 
-            refreshDraft: function() {
+            refreshDraft:function () {
                 var obj = this;
-                $(this.scheduled).each(function(key, dayEl) {
-                   var dayKey = $(dayEl).data("key");
-                   var tasksData = [];
-                    $(dayEl).children().each(function(k, taskEl) {
-                        tasksData.push ($(taskEl).data("raw"));
+                $(this.scheduled).each(function (key, dayEl) {
+                    var dayKey = $(dayEl).data("key");
+                    var tasksData = [];
+                    $(dayEl).children().each(function (k, taskEl) {
+                        tasksData.push($(taskEl).data("raw"));
                     });
                     obj.draft.scheduled[dayKey].tasks = tasksData;
                 });
@@ -184,13 +185,13 @@ Manager.Calendar = {
 
                 //save the changes to draft
                 this.refreshDraft();
-
                 this.refreshUnscheduled();
+
                 this.range.from = this.calendar.plusDays(this.range.from, n);
                 this.range.to = this.calendar.plusDays(this.range.to, n);
 
                 // TODO move somewhere else
-                var range = {'from': Manager.Calendar.formatDate(this.range.from), 'to': Manager.Calendar.formatDate(this.range.to)};
+                var range = {'from':Manager.Calendar.formatDate(this.range.from), 'to':Manager.Calendar.formatDate(this.range.to)};
                 Manager.Data.jsonLoad('calendar_data', range);
             },
 
@@ -221,7 +222,7 @@ Manager.Calendar = {
 
                 //iterate over days
                 $.each(data.scheduled, function (key, day) {
-                    if(!obj.draft.scheduled[key]) {
+                    if (!obj.draft.scheduled[key]) {
                         obj.draft.scheduled[key] = day;
                     }
 
@@ -253,34 +254,40 @@ Manager.Calendar = {
 
                 var list = [];
 
-                    if(obj.draft.unscheduled == undefined) {
-                        obj.draft.unscheduled = data.unscheduled;
-                    }
-                    //iterate over unscheduled tasks
-                    $.each(obj.draft.unscheduled, function (k, task) {
+                if (obj.draft.unscheduled == undefined) {
+                    obj.draft.unscheduled = data.unscheduled;
+                }
+                $(obj.unassigned).html("");
+                //iterate over unscheduled tasks
+                $.each(obj.draft.unscheduled, function (k, task) {
 
-                        var el = obj.createTask(task);
-
-                        //TODO: use element related raw data instead of list
-                        list.push({
-                            el:el,
-                            duration:task.duration
-                        });
-
-                        $(obj.unassigned).append(el);
-
+                    var el = obj.createTask(task);
+                    //TODO: use element related raw data instead of list
+                    list.push({
+                        el:el,
+                        duration:task.duration
                     });
 
-                    obj.adjust(list, false);
+                    $(obj.unassigned).append(el);
 
-                    $(this.unassigned).sortable({
-                        forcePlaceholderSize:true,
-                        helper:'original',
-                        items:"li:not(.inactive)"
-                    }).bind("sortstop",function (event, ui) {
-                            ui.item.children().css('width', '100%');
-                            ui.item.css('position', '');
-                        }).disableSelection();
+                });
+
+                obj.adjust(list, false);
+
+                $(this.unassigned).sortable({
+                    forcePlaceholderSize:true,
+                    helper:'original',
+                    items:"li:not(.inactive)",
+                    start: function(event, ui) {
+                        obj.tmp = $(event.srcElement.parentNode).data("raw");
+                    }
+                }).bind("sortstop",function (event, ui) {
+
+                        ui.item.children().css('width', '100%');
+                        ui.item.css('position', '');
+                        ui.item.data("raw", obj.tmp);
+                        console.log(ui.item.data());
+                    }).disableSelection();
 
                 this.makeDraggable($(this.scheduled).children(this.tasks));
 
@@ -295,21 +302,20 @@ Manager.Calendar = {
             splitDate:function (d) {
                 var arr = d.split('-');
                 return {
-                    d: arr[2],
-                    m : arr[1],
-                    y: arr[0]
+                    d:arr[2],
+                    m:arr[1],
+                    y:arr[0]
                 }
             },
 
             adjust:function (elements, adjust_top) {
-                var current = 0;
                 var obj = this;
                 $.each(elements, function (key, d) {
                     var height = Math.round(d.duration * obj.ratio);
-                    if(adjust_top != false) {
-                        var top = Math.round(d.offset * obj.ratio) - current;
+                    if (adjust_top != false) {
 
-                        current += top + height;
+                        var top = Math.round(d.offset * obj.ratio);
+                        console.log(top);
                         $(d.el).css('top', top + 'px');
                     }
 
