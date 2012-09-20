@@ -10,9 +10,8 @@ Manager.Data.jsonLoad = function(namespace, route, params) {
 };
 
 Manager.Data.jsonSave = function(namespace, route, data) {
-    var url = Routing.generate(route, params);
+    var url = Routing.generate(route);
 
-    console.log("save");
+    $.post(url, {d: JSON.stringify(data)}, function(d) { console.log(d); });
 
-   // .error(function() { console.log("Unable to send data to: " + url); })
 };

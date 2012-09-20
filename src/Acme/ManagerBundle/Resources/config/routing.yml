@@ -16,6 +16,12 @@ calendar_data:
     options:
         expose: true
 
+calendar_data_save:
+    pattern:  /calendar/save
+    defaults: { _controller: AcmeManagerBundle:Calendar:save }
+    options:
+        expose: true
+
 transaction_categories_data:
     pattern:  /wallet/categories.json
     defaults: { _controller: AcmeManagerBundle:Wallet:categoriesData }

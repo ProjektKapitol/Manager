@@ -2,9 +2,9 @@
 
 namespace Acme\ManagerBundle\Controller;
 use Symfony\Component\HttpFoundation\Response;
-
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
+use Acme\ManagerBundle\Entity\Task;
 
 class CalendarController extends Controller
 {
@@ -58,8 +58,48 @@ class CalendarController extends Controller
         return new Response(json_encode($days));
     }
 
-    public function saveAction($data) {
-        //save data here
+    public function saveAction(Request $request) {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $data = $request->request->all();
+        $data = (array)json_decode($data["d"]);
+        $ret = "";
+        foreach ((array)$data['scheduled'] as $date => $day) {
+            $day = (array)$day;
+            $date_from =  new \DateTime((string)$date . ' 00:00:00');
+            $date_to =  new \DateTime((string)$date . ' 23:59:59');
+
+            //delete tasks for given day
+            $old = $this->getDoctrine()->getRepository('AcmeManagerBundle:Task')
+                ->findBetween($date_from, $date_to);
+
+            foreach ($old as $t) {
+                $em->remove($t);
+            }
+
+            $em->flush();
+
+            foreach ($day['tasks'] as $k => $t) {
+                $t = (array)$t;
+                $ret = print_r($t, true);
+                $task = new Task;
+                $task->setIsDone(0);
+                $task->setDescription($t["description"]);
+                $task->setDuration($t["duration"]);
+                $st = (array)$t["startTime"];
+                $h = sprintf("%02d", $st["h"]);
+                $i = sprintf("%02d", $st["i"]);
+                $m = sprintf("%02d", $st["m"]);
+                $d = sprintf("%02d", $st["d"]);
+                $y = $st["y"];
+                $task->setStart(new \DateTime($y . "-" . $m . "-" . $d . " " . $h . ":" . $i. ":00"));
+
+                $em->persist($task);
+            }
+            $em->flush();
+        }
+
+        return new Response($ret);
     }
 
 }

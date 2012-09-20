@@ -27,12 +27,6 @@ class Task
      */
     protected $user;
     
-     /**
-     * @ORM\ManyToOne(targetEntity="TaskCategory", inversedBy="tasks")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
-     */
-    protected $category;
-    
     /**
      * @var smallint $is_done
      *
@@ -170,26 +164,6 @@ class Task
     public function getUser()
     {
         return $this->user;
-    }
-
-    /**
-     * Set category
-     *
-     * @param Acme\ManagerBundle\Entity\TaskCategory $category
-     */
-    public function setCategory(\Acme\ManagerBundle\Entity\TaskCategory $category)
-    {
-        $this->category = $category;
-    }
-
-    /**
-     * Get category
-     *
-     * @return Acme\ManagerBundle\Entity\TaskCategory 
-     */
-    public function getCategory()
-    {
-        return $this->category;
     }
     
     public function getStartTime()

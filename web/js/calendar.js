@@ -54,7 +54,7 @@ Manager.Calendar = {
 
             //current state of data - kept up to date for easy save
             draft:{
-                scheduled:[],
+                scheduled:{},
                 unscheduled:undefined
             },
 
@@ -78,10 +78,8 @@ Manager.Calendar = {
                     obj.refreshDraft();
                     obj.refreshUnscheduled();
 
-                    console.log(obj.draft);
-
                     //TODO refactor
-                    Manager.Data.jsonLoad('Calendar', 'calendar_data_save', obj.draft);
+                    Manager.Data.jsonSave('Calendar', 'calendar_data_save', obj.draft);
 
                     return false
                 });
@@ -130,8 +128,6 @@ Manager.Calendar = {
 
                         taskData.duration = obj.calculateDuration(height);
 
-                        obj.draft.scheduled[dayKey].tasks.push(taskData);
-
                         el.data('raw', taskData);
 
                         el.appendTo(this);
@@ -161,8 +157,11 @@ Manager.Calendar = {
                     $(dayEl).children().each(function (k, taskEl) {
                         tasksData.push($(taskEl).data("raw"));
                     });
+                    obj.draft.scheduled[dayKey] = {};
                     obj.draft.scheduled[dayKey].tasks = tasksData;
+
                 });
+
             },
 
             refreshUnscheduled:function () {
@@ -192,17 +191,22 @@ Manager.Calendar = {
 
                 // TODO move somewhere else
                 var range = {'from':Manager.Calendar.formatDate(this.range.from), 'to':Manager.Calendar.formatDate(this.range.to)};
-                Manager.Data.jsonLoad('calendar_data', range);
+                Manager.Data.jsonLoad('Calendar','calendar_data', range);
             },
 
             makeResizable:function (el) {
+                var obj = this;
                 el.resizable({
                     grid:2,
                     handles:'s',
                     minHeight:0,
                     resize:function (event, ui) {
                         //behaviour of elements on resize
-                        ui.element.css('line-height', ui.element.css('height'));
+                        var height = ui.element.css('height');
+                        ui.element.css('line-height', height);
+                        var data = ui.element.parent().data("raw");
+                        data["duration"] = obj.calculateDuration(height);
+                        ui.element.parent().data("raw", data);
                     }
                 });
             },
@@ -279,14 +283,12 @@ Manager.Calendar = {
                     helper:'original',
                     items:"li:not(.inactive)",
                     start: function(event, ui) {
-                        obj.tmp = $(event.srcElement.parentNode).data("raw");
+                        obj.tmp = $(event.toElement).data("raw");
                     }
                 }).bind("sortstop",function (event, ui) {
-
                         ui.item.children().css('width', '100%');
                         ui.item.css('position', '');
                         ui.item.data("raw", obj.tmp);
-                        console.log(ui.item.data());
                     }).disableSelection();
 
                 this.makeDraggable($(this.scheduled).children(this.tasks));
@@ -315,7 +317,6 @@ Manager.Calendar = {
                     if (adjust_top != false) {
 
                         var top = Math.round(d.offset * obj.ratio);
-                        console.log(top);
                         $(d.el).css('top', top + 'px');
                     }
 
