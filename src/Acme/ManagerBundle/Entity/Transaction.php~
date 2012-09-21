@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Acme\ManagerBundle\Entity\Transaction
  *
- * @ORM\Table(name="transaction")
- * @ORM\Entity
+ * @ORM\Table(name="trans")
+ * @ORM\Entity(repositoryClass="Acme\ManagerBundle\Repository\TransactionRepository")
  */
 class Transaction
 {
@@ -29,12 +29,6 @@ class Transaction
      * @ORM\Column(name="type", type="smallint")
      */
     private $type;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="TransactionCategory", inversedBy="transactions")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
-     */
-    protected $category;
 
     /**
      * @var text $description

@@ -34,18 +34,6 @@
 <div class="head">
 
 </div>
-
-<div class="sidebar">
-    <div class="add-category">
-        <input type="text" class="input" value="New category..." id="add-category-name"/>
-        <a href="#" class="button" id="add-category-button">+</a>
-    </div>
-
-    <div class="remove-category">
-        Drop a category here to delete
-    </div>
-</div>
-
 <div id="transactions-list">
     <div class="add-transaction">
         <input type="text" class="input" value="New transaction description..." id="add-transaction-description"/>
@@ -55,10 +43,6 @@
     </div>
 
     {% include "AcmeManagerBundle:Wallet:transactions.html.twig" %}
-
-    <div class="remove-transaction">
-        Drop a transaction here to delete
-    </div>
 </div>
 
 {% endblock %}

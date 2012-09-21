@@ -450,7 +450,7 @@ ul.unassigned li .task{
     margin: 0px;
 }
 #add-transaction-description {
-    width: 560px;
+    width: 788px;
 }
 #add-transaction-value {
     width: 100px;
@@ -547,9 +547,7 @@ ul.modes a.active {
 }
 
 #transactions-list {
-    float: left;
-    margin-left: 30px;
-    width: 750px;
+    width: 100%;
 }
 
 /* Login */
