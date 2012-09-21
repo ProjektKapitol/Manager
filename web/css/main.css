@@ -534,7 +534,7 @@ ul.modes a.active {
     float: left;
 }
 
-#calendar-save{
+#calendar-save, #wallet-save{
     margin-left: 30px;
     float: left;
 }

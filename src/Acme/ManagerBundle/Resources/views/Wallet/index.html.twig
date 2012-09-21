@@ -18,6 +18,8 @@
             view: 'default'
         });
 
+        Manager.Data.jsonLoad('Wallet', 'transactions_data', {});
+
         $('body').bind('Manager.Wallet:jsonLoaded', function(event, data) {
             Manager.Wallet.view.update(data);
         });
@@ -29,7 +31,7 @@
 
 {% block content %}
 <h1 id="wallet-header">Wallet</h1>
-<a href="#" class="button" id="calendar-save">Save data</a>
+<a href="#" class="button" id="wallet-save">Save data</a>
 
 <div class="head">
 
@@ -42,7 +44,9 @@
         <a href="#" class="button" id="add-transaction-button">+</a>
     </div>
 
-    {% include "AcmeManagerBundle:Wallet:transactions.html.twig" %}
+    <ul class="transactions">
+
+    </ul>
 </div>
 
 {% endblock %}
